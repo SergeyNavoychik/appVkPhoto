@@ -1,0 +1,3 @@
+export const GET_WALL_REQUEST = 'GET_WALL_REQUEST';
+export const GET_WALL_SUCCESS = 'GET_WALL_SUCCESS';
+export const GET_WALL_FAIL = 'GET_WALL_FAIL';
