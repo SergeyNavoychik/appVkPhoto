@@ -2,14 +2,19 @@ import React from 'react';
 import  {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as photoActions from '../actions/photoActions';
-import Popup from '../components/openPhotoPopup';
+import PopupSlider from '../components/openPhotoPopupSlider';
 export class BlockStatisticsTopPhotos extends React.Component {
     open(e){
-        this.props.photoActions.imgPopup(<Popup src={e.target.getAttribute('src')} close={this.close.bind(this)}/>);
+        let arrSrc = this.props.arrayTopPhoto.map ( item => {
+            return item.src_big;
+        });
+        this.props.photoActions.imgPopupSlider(<PopupSlider src={e.target.getAttribute('src')}
+                                                close={this.close.bind(this)}
+                                                arrayTopPhoto={arrSrc}/>);
     }
     close(e){
-        if (e.target.tagName != 'IMG' ){
-            this.props.photoActions.imgPopup(null);
+        if (e.target.className == 'closePopupSlider'){
+            this.props.photoActions.imgPopupSlider(null);
         }
     }
     render() {
