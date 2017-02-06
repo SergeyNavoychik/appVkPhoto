@@ -11,7 +11,7 @@ export class HomePage extends React.Component {
         if (isLogin){
             page = <div className="col-md-6 col-md-push-3">
                         <p className="greeting">Hello, {name}. Wellcome to application YuorFotoVK. There are you can look your
-                        photos, sorted by different options, see most popular photos and etc. Enjoy...
+                        photos, sorted by year, see most popular photos and etc. Enjoy...
                         </p>
                    </div>
         }

@@ -14,7 +14,7 @@ const initialState = {
     fetching: false,
     offset: 15,
     error: '',
-    openImg: null
+    popupSlider: null
 };
 export default function photo(state = initialState, action) {
     switch (action.type){
@@ -37,7 +37,7 @@ export default function photo(state = initialState, action) {
             return Object.assign({}, state, {arrayShowedPhotos: state.arrayShowedPhotos.concat(action.payload.arrayShowedPhotos),
                                              offset: action.payload.off});
         case OPEN_IMG:
-            return Object.assign({}, state, {openImg: action.payload});
+            return Object.assign({}, state, {popupSlider: action.payload});
         default:
             return state;
     }

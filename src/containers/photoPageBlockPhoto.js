@@ -16,13 +16,14 @@ export class PhotoPageBlockPhoto extends React.Component {
     render() {
         let tmp, btn, ifNoPhotos;
         const { photosByChooseYear, fetching, offset, arrayShowedPhotos} = this.props.photo;
+        const {loadMorePhotos} = this.props.photoActions;
         if (this.props.user.isLogin){
             tmp = arrayShowedPhotos.map( (item, id) => {
                     return < PhotoPageItemPhoto item={item} key={id}/>
                   });
             if( photosByChooseYear.length > arrayShowedPhotos.length && !fetching){
                 btn = <button className="btnLoadMore"
-                              onClick={this.props.photoActions.loadMorePhotos.bind(this,photosByChooseYear, offset)}>load more...
+                              onClick={loadMorePhotos.bind(this,photosByChooseYear, offset)}>load more...
                       </button>;
             }
             if ( photosByChooseYear.length == 0){

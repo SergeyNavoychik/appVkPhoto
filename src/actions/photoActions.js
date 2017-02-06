@@ -148,7 +148,7 @@ function arrayShowedPhotos(array) {
     return imgBlockArray;
 }
 
-export function imgPopup(popup) {
+export function imgPopupSlider(popup) {
     return{
         type: 'OPEN_IMG',
         payload: popup

@@ -5,13 +5,13 @@ import Footer from '../components/footer';
 import 'bootstrap';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../styles/Styles.sass';
-import '../helperFunction/front';
+import '../helperFunction/helpFunc';
 import  {connect} from 'react-redux';
 export class App extends React.Component{
     render(){
         return(
             <div>
-                {this.props.openImg}
+                {this.props.popupSlider}
                 <div className="header">
                    <div className="container">
                        <div className="row">
@@ -31,7 +31,7 @@ export class App extends React.Component{
 }
 function mapStateToProps (state) {
     return {
-        openImg: state.photo.openImg
+        popupSlider: state.photo.popupSlider
     }
 }
 export default connect(mapStateToProps)(App)

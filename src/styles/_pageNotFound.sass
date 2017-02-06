@@ -11,14 +11,28 @@
   border-bottom: 1px solid #CDCACD
   padding: 10px 0
   margin-bottom: 10px
+  overflow: hidden
+  span
+    text-align: right
+    @media screen and (max-width: 1000px)
+      font-size: 180px
   div
     display: inline-block
     text-align: left
+    margin-top: 52px
+    @media screen and (max-width: 800px)
+      display: block
+      text-align: center
+      margin-top: 0
     .er
       font-size: 70px
+      @media screen and (max-width: 1000px)
+        font-size: 50px
     .notFound
       font-size: 50px
       font-weight: normal
+      @media screen and (max-width: 1000px)
+        font-size: 36px
 .notFoundSorry
   font-size: 20px
   color: #9e528a
