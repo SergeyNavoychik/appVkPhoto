@@ -3,7 +3,6 @@ import  {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as userAction from '../actions/userActions';
 import * as photoAction from '../actions/photoActions';
-
 export class UserLogin extends React.Component{
     componentWillReceiveProps(nextProps){
         if( nextProps.user.isLogin && nextProps.user.isLogin != this.props.user.isLogin ){

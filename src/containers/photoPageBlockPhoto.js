@@ -41,7 +41,6 @@ export class PhotoPageBlockPhoto extends React.Component {
         )
     }
 }
-
 function mapStateToProps (state) {
     return {
         photo: state.photo,

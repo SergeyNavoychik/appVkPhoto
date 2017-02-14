@@ -1,37 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-export default class PopupSlider extends React.Component {
-    next(e){
+const PopupSlider = (props) => {
+    function next(e){
         let currentImg = document.querySelector('.imgPopup');
         let currentSrc = currentImg.getAttribute('src');
-        let indexSrc = this.props.arrayTopPhoto.indexOf(currentSrc);
-        if(indexSrc == this.props.arrayTopPhoto.length-1){
-            currentImg.setAttribute('src', this.props.arrayTopPhoto[0])
+        let indexSrc = props.arrayTopPhoto.indexOf(currentSrc);
+        if(indexSrc == props.arrayTopPhoto.length-1){
+            currentImg.setAttribute('src', props.arrayTopPhoto[0])
         }
         else{
-            currentImg.setAttribute('src', this.props.arrayTopPhoto[indexSrc+1])
+            currentImg.setAttribute('src', props.arrayTopPhoto[indexSrc+1])
         }
     }
-    prev(e){
+    function prev(e){
         let currentImg = document.querySelector('.imgPopup');
         let currentSrc = currentImg.getAttribute('src');
-        let indexSrc = this.props.arrayTopPhoto.indexOf(currentSrc);
+        let indexSrc = props.arrayTopPhoto.indexOf(currentSrc);
         if(indexSrc == 0){
-            currentImg.setAttribute('src', this.props.arrayTopPhoto[this.props.arrayTopPhoto.length-1])
+            currentImg.setAttribute('src', props.arrayTopPhoto[props.arrayTopPhoto.length-1])
         }
         else{
-            currentImg.setAttribute('src', this.props.arrayTopPhoto[indexSrc - 1])
+            currentImg.setAttribute('src', props.arrayTopPhoto[indexSrc - 1])
         }
     }
-    render() {
-        return (
-            <div id="openTopImg" className="closePopupSlider" onClick={this.props.close}>
-                <img src={this.props.src} onClick={this.next.bind(this)} className="imgPopup" alt=""/>
-                <div className="next" onClick={this.next.bind(this)}><span>&gt;</span></div>
-                <div className="prev" onClick={this.prev.bind(this)}><span>&lt;</span></div>
-            </div>
-        )
-    }
+    return (
+        <div id="openTopImg" className="closePopupSlider" onClick={props.close}>
+            <img src={props.src} onClick={next} className="imgPopup" alt=""/>
+            <div className="next" onClick={next}><span>&gt;</span></div>
+            <div className="prev" onClick={prev}><span>&lt;</span></div>
+        </div>
+    )
 }
-
+export default PopupSlider;
 
