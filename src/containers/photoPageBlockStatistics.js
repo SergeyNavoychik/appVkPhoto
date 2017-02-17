@@ -2,7 +2,7 @@ import React from 'react';
 import  {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as photoActions from '../actions/photoActions';
-import BlockStatisticsTopPhotos from './blockStatisticsTopPhotos';
+import BlockStatisticsTopPhotos from '../components/blockStatisticsTopPhotos';
 
 export class PhotoPageBlockStatistics extends React.Component {
     render() {
@@ -24,11 +24,13 @@ export class PhotoPageBlockStatistics extends React.Component {
                     </li>
                     <li>
                         <p>TOP 5 popular photos in {year}:</p>
-                        < BlockStatisticsTopPhotos arrayTopPhoto={arrMostPopularPhotoSrc} />
+                        < BlockStatisticsTopPhotos arrayTopPhoto={arrMostPopularPhotoSrc}
+                                                   actionSlider={this.props.photoActions.imgPopupSlider}/>
                     </li>
                     <li>
                         <p>Most not popular photo in {year}:</p>
-                        < BlockStatisticsTopPhotos arrayTopPhoto={arrNotPopularPhoto}/>
+                        < BlockStatisticsTopPhotos arrayTopPhoto={arrNotPopularPhoto}
+                                                   actionSlider={this.props.photoActions.imgPopupSlider}/>
                     </li>
                 </ul>
         }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 const PhotoPageItemPhoto = (props) => {
     return (
             <div className="itemPhoto col-sm-4 col-xs-12" >
@@ -7,4 +7,8 @@ const PhotoPageItemPhoto = (props) => {
             </div>
     )
 }
+PhotoPageItemPhoto.propTypes = {
+    item: PropTypes.object.isRequired
+}
+
 export default PhotoPageItemPhoto;

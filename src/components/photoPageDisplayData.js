@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import PhotoPageBlockPhoto from '../containers/photoPageBlockPhoto';
 import PhotoPageBlockStatistics from '../containers/photoPageBlockStatistics';
 
@@ -9,5 +9,8 @@ const PhotoPageDisplayData = (props) => {
                 <PhotoPageBlockStatistics/>
             </div>
     )
+}
+PhotoPageDisplayData.propTypes = {
+    params: PropTypes.object.isRequired
 }
 export default PhotoPageDisplayData;

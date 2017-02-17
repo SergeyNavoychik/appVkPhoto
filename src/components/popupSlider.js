@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 const PopupSlider = (props) => {
     function next(e){
@@ -30,6 +30,13 @@ const PopupSlider = (props) => {
             <div className="prev" onClick={prev}><span>&lt;</span></div>
         </div>
     )
+}
+
+PopupSlider.propTypes = {
+    arrayTopPhoto: PropTypes.array.isRequired,
+    src: PropTypes.string.isRequired,
+    close: PropTypes.func.isRequired
+
 }
 export default PopupSlider;
 
