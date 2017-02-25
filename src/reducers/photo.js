@@ -36,7 +36,7 @@ export default function photo(state = initialState, action) {
                                                 arrNotPopularPhoto: action.payload.unPopular
                                             },});
         case SHOW_MORE_PHOTO:
-            return Object.assign({}, state, {arrayShowedPhotos: state.arrayShowedPhotos.concat(action.payload.arrayShowedPhotos),
+            return Object.assign({}, state, {arrayShowedPhotos: [].concat(state.arrayShowedPhotos, action.payload.arrayShowedPhotos),
                                              offset: action.payload.off});
         case OPEN_IMG:
             return Object.assign({}, state, {popupSlider: action.payload});

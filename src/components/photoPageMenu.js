@@ -7,7 +7,7 @@ const PhotoPageMenu = () => {
                 {
                     years.map((item, i) => {
                         return (
-                            <Link to={`photos/${item}`}
+                            <Link to={`/photos/${item}`}
                                   key={i}
                                   activeClassName="btnCurrentYear"
                                   className="btnChooseYear"
